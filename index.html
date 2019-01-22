@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript アコーディオン</title>
+        <style>
+        * {
+            margin: 0;
+            padding: o;
+        }
+        body {
+            width: 300px;
+            margin: auto;
+        }
+        #toggleMenu,#toggleMenu2,#toggleMenu3 {
+            overflow: hidden;
+            transition: all 0.5s;
+            background-color: #eee;
+        }
+        #toggleMenuButton,#toggleMenuButton2,#toggleMenuButton3 {
+            cursor: pointer;
+            height: 3rem;
+            line-height: 3rem;
+            text-align: center;
+        }
+        #toggleMenuButton {
+            background: pink;
+        }
+        #toggleMenuButton2 {
+            background: lightseagreen;
+        }
+        #toggleMenuButton3 {
+            background: cornflowerblue;
+        }
+    </style>
+    </head>
+    <body>
+        
+            <div id="toggleMenuButton">メニュー1</div>
+            <ul id="toggleMenu">
+                <li>top</li>
+                <li>about</li>
+                <li>contact</li>
+            </ul>
+            <div id="toggleMenuButton2">メニュー2</div>
+            <ul id="toggleMenu2">
+                <li>top</li>
+                <li>about</li>
+                <li>contact</li>
+            </ul>
+            <div id="toggleMenuButton3">メニュー3</div>
+            <ul id="toggleMenu3">
+                <li>top</li>
+                <li>about</li>
+                <li>contact</li>
+            </ul>
+      
+    <script>
+    (function(window,document){
+        var toggleMenuButton = document.getElementById('toggleMenuButton');
+        var toggleMenu = document.getElementById('toggleMenu');
+        var clientH;
+        init();
+        function init() {
+            toggleMenu.style.height = 'auto';
+            clientH = toggleMenu.clientHeight;
+            toggleMenu.style.height = '0px';
+            toggleMenuButton.addEventListener('click',function(){clickToggle();},false);
+        }
+        function clickToggle() {
+            var lastH = toggleMenu.style.height;
+            toggleMenu.style.height = (lastH == '' || lastH == '0px') ? clientH + 'px' : '0px';
+        }
+    })(window,document);
+
+     (function(window,document){
+        var toggleMenuButton = document.getElementById('toggleMenuButton2');
+        var toggleMenu = document.getElementById('toggleMenu2');
+        var clientH;
+        init();
+        function init() {
+            toggleMenu.style.height = 'auto';
+            clientH = toggleMenu.clientHeight;
+            toggleMenu.style.height = '0px';
+            toggleMenuButton.addEventListener('click',function(){clickToggle();},false);
+        }
+        function clickToggle() {
+            var lastH = toggleMenu.style.height;
+            toggleMenu.style.height = (lastH == '' || lastH == '0px') ? clientH + 'px' : '0px';
+        }
+    })(window,document);
+
+     (function(window,document){
+        var toggleMenuButton = document.getElementById('toggleMenuButton3');
+        var toggleMenu = document.getElementById('toggleMenu3');
+        var clientH;
+        init();
+        function init() {
+            toggleMenu.style.height = 'auto';
+            clientH = toggleMenu.clientHeight;
+            toggleMenu.style.height = '0px';
+            toggleMenuButton.addEventListener('click',function(){clickToggle();},false);
+        }
+        function clickToggle() {
+            var lastH = toggleMenu.style.height;
+            toggleMenu.style.height = (lastH == '' || lastH == '0px') ? clientH + 'px' : '0px';
+        }
+    })(window,document);
+    </script>
+    </body>
+</html>
